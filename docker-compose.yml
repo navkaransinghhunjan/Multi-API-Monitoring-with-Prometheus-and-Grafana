@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  api1:
+    build:
+      context: ./api1
+    container_name: api1
+    ports:
+      - "5000:5000"
+
+  api2:
+    build:
+      context: ./api2
+    container_name: api2
+    ports:
+      - "5001:5001"
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin  # Set your admin password here
+      - GF_SMTP_ENABLED=true
+      - GF_SMTP_HOST=smtp.gmail.com:587
+      - GF_SMTP_USER=navkaransinghhunjan@gmail.com        # Your Gmail address
+      - GF_SMTP_PASSWORD=cczx lmmz qrnd gtei     # Your Gmail password or App Password
+      - GF_SMTP_FROM=navkaransinghhunjan@gmail.com        # Your Gmail address
+      - GF_SMTP_SKIP_VERIFY=true
+      - GF_SMTP_TO=navkaranhunjan007@gmail.com    # Recipient's email address
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+
