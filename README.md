@@ -34,6 +34,7 @@ Docker Compose
 ```bash
 mkdir Multi-API-Monitoring-with-Prometheus-and-Grafana
 cd Multi-API-Monitoring-with-Prometheus-and-Grafana
+git init
 git pull https://github.com/navkaransinghhunjan/Multi-API-Monitoring-with-Prometheus-and-Grafana.git
 ```
 ## 2. Set up Gmail SMTP for Grafana Alerts:
