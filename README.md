@@ -28,12 +28,13 @@ Docker
 Docker Compose
 
 # Getting Started
-## 1. Clone the repository:
+
+## 1. Create folder and clone repositories:
 
 ```bash
-
-git clone https://github.com/yourusername/multi-api-monitoring.git
-cd multi-api-monitoring
+mkdir Multi-API-Monitoring-with-Prometheus-and-Grafana
+cd Multi-API-Monitoring-with-Prometheus-and-Grafana
+git pull https://github.com/navkaransinghhunjan/Multi-API-Monitoring-with-Prometheus-and-Grafana.git
 ```
 ## 2. Set up Gmail SMTP for Grafana Alerts:
 
@@ -59,13 +60,6 @@ docker-compose up --build
  * Prometheus: http://localhost:9090
  * Grafana: http://localhost:3000 (Login with admin/admin, or change the password in docker-compose.yml)
    
-## 5. Load the Dashboard in Grafana:
-
-* Grafana should automatically load the dashboard from
-  ```
-   grafana/provisioning/dashboards/dashboard.json.
-  ```
-* Navigate to the dashboard to view real-time metrics for each API.
 # API Endpoints
 * GET /status: Returns a JSON object indicating the API status and timestamp.
 * GET /metrics: Exposes Prometheus-compatible metrics.
@@ -86,5 +80,4 @@ The dashboard provides:
 * API Availability: Displays up/down status of each API.
 * API Response Time: Shows average response times per API.
   
-For more details, check grafana/provisioning/dashboards/dashboard.json.
 
